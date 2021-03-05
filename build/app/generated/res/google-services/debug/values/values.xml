@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">850390854235-54vmpnrr7kkcabg9er051pve8hit9g3t.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">850390854235</string>
+    <string name="google_api_key" translatable="false">AIzaSyCziNdVd9VihvduPXNh_h5rBcieFqRi2To</string>
+    <string name="google_app_id" translatable="false">1:850390854235:android:97219350e5369c0514ad7e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCziNdVd9VihvduPXNh_h5rBcieFqRi2To</string>
+    <string name="google_storage_bucket" translatable="false">ring-rle.appspot.com</string>
+    <string name="project_id" translatable="false">ring-rle</string>
+</resources>

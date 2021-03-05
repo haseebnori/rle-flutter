@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "850390854235",
+    "project_id": "ring-rle",
+    "storage_bucket": "ring-rle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850390854235:android:97219350e5369c0514ad7e",
+        "android_client_info": {
+          "package_name": "co.ringrle.rle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850390854235-54vmpnrr7kkcabg9er051pve8hit9g3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCziNdVd9VihvduPXNh_h5rBcieFqRi2To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850390854235-54vmpnrr7kkcabg9er051pve8hit9g3t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "850390854235-vpnj8s96njgoc9lopku3gsb6nr2du1u9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.ringrle.rle"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
