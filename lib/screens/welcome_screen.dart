@@ -12,15 +12,11 @@ import 'package:rle/screens/timeline.dart';
 import 'package:rle/screens/upload.dart';
 import 'package:rle/screens/profile.dart';
 import 'package:rle/screens/activity.dart';
-import 'package:algolia/algolia.dart';
-
-final has = {"name": "John", "age": 30, "car": null};
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
 final storageRef = FirebaseStorage.instance.ref();
 final usersRef = FirebaseFirestore.instance.collection('users');
 final postsRef = FirebaseFirestore.instance.collection('posts');
-
 final DateTime timeStamp = DateTime.now();
 User currentUser;
 
@@ -69,8 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       body: SafeArea(
         child: PageView(
           children: <Widget>[
-            ElevatedButton(
-                child: Text(has[AutofillHints.name]), onPressed: logout),
+            ElevatedButton(child: Text("LOG OUT"), onPressed: logout),
             //Timeline(),
             ActivityFeed(),
             Upload(currentUser: currentUser),
@@ -168,11 +163,10 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     pageController = PageController();
 
-    // dectects when user signed in
+    // detects when user signed in
     googleSignIn.onCurrentUserChanged.listen((account) {
       handleSignIn(account);
     }, onError: (err) {
@@ -252,20 +246,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       "bio": "",
       "timeStamp": timeStamp,
     };
-    Algolia algolia = Algolia.init(
-      applicationId: 'JFS9USS5TQ',
-      apiKey: 'b3e278faa6507cd9830373e6d0bd88cc',
-    );
-    AlgoliaTask taskAdded,
-        taskUpdated,
-        taskDeleted,
-        taskBatch,
-        taskClearIndex,
-        taskDeleteIndex;
-    AlgoliaObjectSnapshot addedObject;
-
-    taskAdded = await algolia.instance.index('users').addObject(addData);
-    print(taskAdded.data);
 
     print(currentUser);
     print(currentUser.username);

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:rle/Components/progress.dart';
 import 'package:rle/Components/user.dart';
 import 'package:rle/screens/welcome_screen.dart';
-import 'package:algolia/algolia.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -13,34 +12,10 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   TextEditingController searchController = TextEditingController();
   Future<QuerySnapshot> searchResultsFuture;
-  AlgoliaQuery searchQuery;
-  bool _searching = false;
-  AlgoliaQuerySnapshot snap;
-
-  _search(String queryT) async {
-    setState(() {
-      _searching = true;
-    });
-
-    Algolia algolia = Algolia.init(
-      applicationId: 'JFS9USS5TQ',
-      apiKey: 'e9efdc9abd01da967853047487c8985b',
-    );
-
-    searchQuery = algolia.instance.index('users').search(queryT);
-    snap = await searchQuery.getObjects();
-    handleSearch(queryT);
-
-    setState(() {
-      _searching = false;
-    });
-  }
 
   handleSearch(String qu) {
-    List<AlgoliaObjectSnapshot> search1 = snap.hits;
-    print(search1.first.data['id']);
     Future<QuerySnapshot> users =
-        usersRef.where("id", isEqualTo: search1.first.data['id']).get();
+        usersRef.where("displayName", isGreaterThanOrEqualTo: qu).get();
     setState(() {
       searchResultsFuture = users;
     });
@@ -67,7 +42,7 @@ class _SearchState extends State<Search> {
             onPressed: clearSearch,
           ),
         ),
-        onFieldSubmitted: _search,
+        onFieldSubmitted: handleSearch,
       ),
     );
   }
