@@ -66,6 +66,12 @@ class _EditProfileState extends State<EditProfile> {
     );
   }
 
+  Logout() async {
+    await googleSignIn.signOut();
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+  }
+
   Column buildBioField() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -180,7 +186,7 @@ class _EditProfileState extends State<EditProfile> {
                       Padding(
                         padding: EdgeInsets.all(16.0),
                         child: TextButton.icon(
-                          onPressed: () => print('Log Out'),
+                          onPressed: Logout,
                           icon: Icon(
                             Icons.cancel,
                             color: Colors.red,
