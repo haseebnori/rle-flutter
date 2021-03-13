@@ -2,12 +2,6 @@
   "configVersion": 2,
   "packages": [
     {
-      "name": "algolia",
-      "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/algolia-0.1.7",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
       "name": "animated_text_kit",
       "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-3.1.2",
       "packageUri": "lib/",
@@ -194,6 +188,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "geolocator",
+      "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "google_api_availability",
+      "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/google_api_availability-2.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "google_sign_in",
       "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.5.9",
       "packageUri": "lib/",
@@ -252,6 +258,12 @@
       "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "location_permissions",
+      "rootUri": "file:///Users/hash/Development/flutter/.pub-cache/hosted/pub.dartlang.org/location_permissions-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
     },
     {
       "name": "matcher",
@@ -428,7 +440,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2021-03-11T17:53:24.190593Z",
+  "generated": "2021-03-11T19:13:22.869266Z",
   "generator": "pub",
   "generatorVersion": "2.12.0"
 }

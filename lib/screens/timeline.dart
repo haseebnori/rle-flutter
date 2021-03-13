@@ -3,7 +3,7 @@ import 'package:rle/Components/header.dart';
 import 'package:rle/Components/progress.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-final usersRef = FirebaseFirestore.instance.collection('users');
+final usersRefTimeLine = FirebaseFirestore.instance.collection('users');
 
 class Timeline extends StatefulWidget {
   static String id = "timeline";
@@ -20,13 +20,13 @@ class _TimelineState extends State<Timeline> {
   }
 
   createUser() {
-    usersRef
+    usersRefTimeLine
         .doc("asdasdasd")
         .set({"username": "jeff", "postsCount": 0, "isAdmin": false});
   }
 
   updateUser() async {
-    final doc = await usersRef.doc("klIBXyrXYpX1K7wAQa72").get();
+    final doc = await usersRefTimeLine.doc("klIBXyrXYpX1K7wAQa72").get();
     if (doc.exists) {
       doc.reference
           .update({"username": "jeff", "postsCount": 0, "isAdmin": false});
@@ -35,7 +35,7 @@ class _TimelineState extends State<Timeline> {
 
   deleteUser() async {
     final DocumentSnapshot doc =
-        await usersRef.doc("klIBXyrXYpX1K7wAQa72").get();
+        await usersRefTimeLine.doc("klIBXyrXYpX1K7wAQa72").get();
     if (doc.exists) {
       doc.reference.delete();
     }
@@ -46,7 +46,7 @@ class _TimelineState extends State<Timeline> {
     return Scaffold(
       appBar: header(context, isAppTitle: true),
       body: StreamBuilder<QuerySnapshot>(
-        stream: usersRef.snapshots(),
+        stream: usersRefTimeLine.snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return circularProgress();
