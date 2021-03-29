@@ -142,6 +142,7 @@ class _UploadState extends State<Upload> {
           .collection("usersPosts")
           .doc(postId)
           .set({
+        "description": description,
         "postId": postId,
         "ownerId": widget.currentUser.id,
         "username": widget.currentUser.username,
