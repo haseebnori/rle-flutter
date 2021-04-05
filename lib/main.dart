@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:rle/screens/welcome_screen.dart';
 import 'package:rle/screens/registration_screen.dart';
 import 'package:rle/screens/chat_screen.dart';
-import 'package:algolia/algolia.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -28,6 +28,12 @@
 @import firebase_storage;
 #endif
 
+#if __has_include(<geolocator/GeolocatorPlugin.h>)
+#import <geolocator/GeolocatorPlugin.h>
+#else
+@import geolocator;
+#endif
+
 #if __has_include(<google_sign_in/FLTGoogleSignInPlugin.h>)
 #import <google_sign_in/FLTGoogleSignInPlugin.h>
 #else
@@ -38,6 +44,12 @@
 #import <image_picker/FLTImagePickerPlugin.h>
 #else
 @import image_picker;
+#endif
+
+#if __has_include(<location_permissions/LocationPermissionsPlugin.h>)
+#import <location_permissions/LocationPermissionsPlugin.h>
+#else
+@import location_permissions;
 #endif
 
 #if __has_include(<path_provider/FLTPathProviderPlugin.h>)
@@ -53,8 +65,10 @@
   [FLTFirebaseAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAuthPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [FLTFirebaseStoragePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseStoragePlugin"]];
+  [GeolocatorPlugin registerWithRegistrar:[registry registrarForPlugin:@"GeolocatorPlugin"]];
   [FLTGoogleSignInPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTGoogleSignInPlugin"]];
   [FLTImagePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTImagePickerPlugin"]];
+  [LocationPermissionsPlugin registerWithRegistrar:[registry registrarForPlugin:@"LocationPermissionsPlugin"]];
   [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];
 }
 

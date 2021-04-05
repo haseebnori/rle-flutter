@@ -45,6 +45,12 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_storage/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_storage/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_storage/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/geolocator/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/google_sign_in/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/google_sign_in/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/google_sign_in/build" />
@@ -57,6 +63,12 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/image_picker/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/image_picker/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/image_picker/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location_permissions/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location_permissions/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location_permissions/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location_permissions/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location_permissions/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/location_permissions/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/path_provider/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/path_provider/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/path_provider/build" />

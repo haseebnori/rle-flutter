@@ -22,8 +22,7 @@ dependencies:
   image: ^2.1.19
   uuid: ^2.2.2
   firebase_storage: ^7.0.0
-  algolia: ^0.1.7
-  http: ^0.12.2
+  geolocator: 4.0.1
 
 dev_dependencies:
   flutter_test:
