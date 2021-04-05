@@ -1,9 +1,9 @@
-import 'dart:math';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:rle/Components/header.dart';
 import 'package:rle/Components/progress.dart';
 import 'package:rle/Components/user.dart';
+import 'package:rle/screens/post_screen.dart';
 import 'package:rle/screens/welcome_screen.dart';
 import 'package:rle/screens/editProfile.dart';
 
@@ -17,6 +17,33 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   final currentUserId = currentUser?.id;
+
+  bool isLoading = false;
+  int postCount = 0;
+  List<Post> posts = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getProfilePosts();
+  }
+
+  getProfilePosts() async {
+    setState(() {
+      isLoading = true;
+    });
+    QuerySnapshot snapshot = await postsRef
+        .doc(widget.profileId)
+        .collection('usersPosts')
+        .orderBy('timeStamp', descending: true)
+        .get();
+    setState(() {
+      isLoading = false;
+      postCount = snapshot.docs.length;
+      print(postCount);
+      posts = snapshot.docs.map((doc) => Post.fromDocument(doc)).toList();
+    });
+  }
 
   editProfile() {
     Navigator.push(
@@ -76,7 +103,7 @@ class _ProfileState extends State<Profile> {
           child: Text(
             label,
             style: TextStyle(
-                color: Colors.grey,
+                color: Colors.white,
                 fontSize: 15.0,
                 fontWeight: FontWeight.w400),
           ),
@@ -113,7 +140,7 @@ class _ProfileState extends State<Profile> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            buildCountColumn("Posts", 0),
+                            buildCountColumn("Posts", postCount),
                             buildCountColumn("Fans", 0),
                             buildCountColumn("Following", 0),
                           ],
@@ -167,15 +194,27 @@ class _ProfileState extends State<Profile> {
     );
   }
 
+  buildProfilePosts() {
+    if (isLoading) {
+      return circularProgress();
+    }
+    return Column(
+      children: posts,
+    );
+  }
+
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header(
-        context,
-        titleText: "Profile",
-      ),
+      appBar: header(context, titleText: "Profile"),
       body: ListView(
-        children: <Widget>[buildProfileHeader()],
+        children: <Widget>[
+          buildProfileHeader(),
+          Divider(
+            height: 0.0,
+          ),
+          buildProfilePosts(),
+        ],
       ),
     );
   }
